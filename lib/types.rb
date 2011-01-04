@@ -59,6 +59,7 @@ class Object
     #
     
     def type_of?(cls)
+        cls = cls::new
         if cls.kind_of? Types::Type
             cls.match_type? self
         else
@@ -78,12 +79,12 @@ class Object
         end
         
         classes.each do |cls|
-            if cls.type_of? cls
+            if self.type_of? cls
                 return true
             end
-            
-            return false
         end
+        
+        return false
     end
 end
 

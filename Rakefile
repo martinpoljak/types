@@ -13,8 +13,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "hash-utils"
-  gem.homepage = "http://github.com/martinkozak/hash-utils"
+  gem.name = "types"
+  gem.homepage = "http://github.com/martinkozak/types"
   gem.license = "MIT"
   gem.summary = 'Introduces group of classes as eqivalent to some data types in other languages such as boolean and allows introspection according to type of class too. In fact, partially replaces multiple inheritance because introduces unlimited formal genericity for every class.'
   gem.email = "martinkozak@martinkozak.net"
@@ -31,7 +31,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "hash-utils #{version}"
+  rdoc.title = "types #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
