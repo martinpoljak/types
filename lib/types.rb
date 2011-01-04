@@ -59,11 +59,11 @@ class Object
     #
     
     def type_of?(cls)
-        cls = cls::new
-        if cls.kind_of? Types::Type
-            cls.match_type? self
+        cls_new = cls::new
+        if cls_new.kind_of? Types::Type
+            cls_new.match_type? self
         else
-            self.kind_of? some_class
+            self.kind_of? cls
         end
     end
 
