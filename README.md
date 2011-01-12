@@ -26,6 +26,9 @@ Then you can call:
 Binding back to classic behaviour works:
 
     foo.type_of? Numeric    # returns true
+    
+By overriding `#type_types` method of the `Type` class you can achieve
+also types inheritance by the same way as mentioned above.
 
 
 Contributing
