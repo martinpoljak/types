@@ -1,7 +1,7 @@
 Ruby Types
 ==========
 
-**Ruby Types** Introduces *group of classes* as eqivalent to some data 
+**Ruby Types** introduces *group of classes* as eqivalent to some data 
 types in other languages such as `boolean` and allows introspection 
 according to type of class too. In fact, partially replaces multiple 
 inheritance because introduces unlimited formal genericity for every 
