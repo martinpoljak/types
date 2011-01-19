@@ -3,11 +3,24 @@
 
 require "multitype-introspection"
 
+##
+# Root library module.
+#
+
 module Types
+
+    ##
+    # Type defining class.
+    # @abstract
+    #
+    
     class Type
     
         ##
         # Returns classes which are part of this type.
+        #
+        # @return [Array] array of class objects
+        # @abstract
         #
         
         def type_classes
@@ -16,6 +29,7 @@ module Types
         
         ##
         # Returns types which are part of this type.
+        # @return [Array] array of types objects
         # 
         
         def type_types
@@ -24,6 +38,9 @@ module Types
         
         ##
         # Matches object is of this type.
+        #
+        # @param [Object] object object for type matching
+        # @return [Boolean] 'true' if match, 'false' in otherwise
         #
         
         def match_type?(object)
@@ -37,11 +54,18 @@ module Types
         
     end
     
+    ##
+    # Defines generic boolean type.
+    # @abstract
+    # 
+    
     class Boolean < Type
 
         ##
         # Returns classes which are part of this type.
         # In case of boolean <tt>TrueClass</tt> and <tt>FalseClass</tt>.
+        #
+        # @return [Array] array of types objects
         #
         
         def type_classes
@@ -51,11 +75,18 @@ module Types
     end
 end
 
+##
+# Extension of built-in Object class.
+#
+
 class Object
 
     ##
     # Indicates object is type of some class.
-    # If class isn't Type, matches against kind_of?.
+    # If class isn't Type, matches against #kind_of?.
+    #
+    # @param [Types::Type, Class] cls  some type or class specification
+    # @return [Boolean] 'true' if it is, 'false' in otherwise
     #
     
     def type_of?(cls)
@@ -67,10 +98,12 @@ class Object
         end
     end
 
-
     ##
     # Indicates object is type of some class in the list.
-    # If class isn't Type, matches against kind_of?.
+    # If class isn't Type, matches against #kind_of?.
+    #
+    # @param [Array] classes array of Type or Class objects
+    # @return [Boolean] 'true' if it is, 'false' in otherwise
     #
         
     def type_of_any?(classes)
@@ -87,6 +120,11 @@ class Object
         return false
     end
 end
+
+##
+# Redefines generic boolean type in main namespace.
+# @abstract
+# 
 
 class Boolean < Types::Boolean
 end
