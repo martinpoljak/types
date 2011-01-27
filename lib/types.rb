@@ -39,8 +39,8 @@ module Types
         ##
         # Matches object is of this type.
         #
-        # @param [Object] object object for type matching
-        # @return [Boolean] 'true' if match, 'false' in otherwise
+        # @param [Object] object object for type matching
+        # @return [Boolean] +true+ if match, +false+ in otherwise
         #
         
         def match_type?(object)
@@ -63,7 +63,7 @@ module Types
 
         ##
         # Returns classes which are part of this type.
-        # In case of boolean <tt>TrueClass</tt> and <tt>FalseClass</tt>.
+        # In case of boolean +TrueClass+ and +FalseClass+.
         #
         # @return [Array] array of types objects
         #
@@ -83,10 +83,10 @@ class Object
 
     ##
     # Indicates object is type of some class.
-    # If class isn't Type, matches against #kind_of?.
+    # If class isn't {Types::Type Type}, matches against +#kind_of?+.
     #
     # @param [Types::Type, Class] cls  some type or class specification
-    # @return [Boolean] 'true' if it is, 'false' in otherwise
+    # @return [Boolean] +true+ if it is, +false+ in otherwise
     #
     
     def type_of?(cls)
@@ -100,10 +100,10 @@ class Object
 
     ##
     # Indicates object is type of some class in the list.
-    # If class isn't Type, matches against #kind_of?.
+    # If class isn't {Types::Type Type}, matches against +#kind_of?+.
     #
-    # @param [Array] classes array of Type or Class objects
-    # @return [Boolean] 'true' if it is, 'false' in otherwise
+    # @param [Array] classes array of {Types::Type Type} or +Class+ objects
+    # @return [Boolean] +true+ if it is, +false+ in otherwise
     #
         
     def type_of_any?(classes)
