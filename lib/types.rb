@@ -2,6 +2,7 @@
 # (c) 2011 Martin Kozák (martinkozak@martinkozak.net)
 
 require "multitype-introspection"
+require "abstract"
 
 ##
 # Root library module.
@@ -24,7 +25,7 @@ module Types
         #
         
         def type_classes
-            raise Exception::new("Class is abstract.")
+            not_implemented
         end
         
         ##
